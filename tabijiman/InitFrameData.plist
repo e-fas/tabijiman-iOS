@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ja</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>西山公園</string>
+			<key>desc</key>
+			<string>西山公園のつつじ。
+西山公園は、５月のGW前後がつつじがみごろです。園内の西山動物園は入園無料。</string>
+			<key>lat</key>
+			<real>35.950183</real>
+			<key>lng</key>
+			<real>136.181916</real>
+			<key>img</key>
+			<string>sabae_nishiyama_oss.png</string>
+			<key>area</key>
+			<integer>500</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>足羽川の桜並木</string>
+			<key>desc</key>
+			<string>足羽川の堤防に並ぶ桜並木は、４月上旬がみごろ。「さくら名所100選」にも選ばれています。</string>
+			<key>lat</key>
+			<real>36.060975</real>
+			<key>lng</key>
+			<real>136.213227</real>
+			<key>img</key>
+			<string>fukui_asuwa_oss.png</string>
+			<key>area</key>
+			<integer>500</integer>
+		</dict>
+	</array>
+	<key>en</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Nishiyama Park, Sabae</string>
+			<key>desc</key>
+			<string>Azalea in nishiyama park.
+Azalea&apos;s season is the beginning of May. You can meet some animals in zoo with free of charge. </string>
+			<key>lat</key>
+			<real>35.950183</real>
+			<key>lng</key>
+			<real>136.181916</real>
+			<key>img</key>
+			<string>sabae_nishiyama_oss.png</string>
+			<key>area</key>
+			<integer>500</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Row of cherry blossom trees, Asuwa river</string>
+			<key>desc</key>
+			<string>You can see such a amazing cherry blossom on the beginning of April. The place is also designated as one of Japan&apos;s Top 100 Cherry Blossom Viewing Sites, </string>
+			<key>lat</key>
+			<real>36.060975</real>
+			<key>lng</key>
+			<real>136.213227</real>
+			<key>img</key>
+			<string>fukui_asuwa_oss.png</string>
+			<key>area</key>
+			<integer>500</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

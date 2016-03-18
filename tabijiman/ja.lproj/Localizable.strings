@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  tabijiman
+
+  Copyright (c) 2016年 FUKUI Association of information & system industry
+*/
+
+// ViewController.swift
+"Failed to get location" = "位置情報取得 失敗";
+"Display Fukui Prefecture" = "福井県を表示します";
+
+
+// TakePicture
+"KAO HAME" = "カオハメ";
+
+
+// SaveShareView.swift
+"Share" = "シェア";
+
+
+// FrameCollection
+"Collection" = "コレクション";
+"Design" = "フレーム";
+"GetDesign" = "ゲットフレーム";
+
+
+// MoreInfo
+"oops!" = "ゲットできませんでした";
+"You are so far from the place. Design can not be gotton. \n Please come to the place & try it again." = "この場所の近くに来ると、フレームがゲットできます。 \n ぜひ、観光に来てください！";
+
+
+// Credit
+"Credit" = "クレジット";

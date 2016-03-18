@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  tabijiman
+
+  Copyright (c) 2016 FUKUI Association of information & system industry
+*/
+
+// アプリ名の変更
+CFBundleDisplayName = "旅自慢OSS";
+
+// 位置情報取得時メッセージ
+NSLocationWhenInUseUsageDescription = "現在地を確認してマップに表示するために、位置情報を取得します";
