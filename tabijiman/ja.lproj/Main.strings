@@ -15,7 +15,7 @@
 "Mi5-hM-a8Y.text" = "Label";
 
 /* Class = "UILabel"; text = "Copyright 2016 FAS\nhttp://www.e-fas.net/\n\nFUKUI Association of information & system industry\n"; ObjectID = "PZY-8O-fMZ"; */
-"PZY-8O-fMZ.text" = "Copyright (c) 2016 福井県システム工業会\nhttp://www.e-fas.net/\n\nFUKUI Association of information & system industry\n";
+"PZY-8O-fMZ.text" = "Copyright (c) 2016 福井県情報システム工業会\nhttp://www.e-fas.net/\n\nFUKUI Association of information & system industry\n";
 
 /* Class = "UILabel"; text = "LabelAddress"; ObjectID = "bYj-Kt-Bv3"; */
 "bYj-Kt-Bv3.text" = "LabelAddress";
