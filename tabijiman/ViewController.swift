@@ -213,7 +213,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
             case "place_dic_data":
                 print("place in keyPath")
                 
-                SQLite.sharedInstance.truncateDb("place")  // delete all data in PlaceDb
+                SQLite.sharedInstance.truncateTable("place")  // delete all data in PlaceTable
                 
                 for data in self.place_dic_data {
                     _ = SQLite.sharedInstance.insertData("place", datas: data)
@@ -224,7 +224,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
             case "frame_dic_data":
                 print("frame in keyPath")
 
-                SQLite.sharedInstance.truncateDb("frame")  // delete all data in frameDb
+                SQLite.sharedInstance.truncateTable("frame")  // delete all data in frameTable
                 
                 for data in self.frame_dic_data {
                     _ = SQLite.sharedInstance.insertData("frame", datas: data)
@@ -454,7 +454,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
     func createInitFrameDb(dic_data: Array<Dictionary<String, AnyObject>>) {
 
         // Truncate first
-        SQLite.sharedInstance.truncateDb("init")  // delete all data in initFrameDb
+        SQLite.sharedInstance.truncateTable("init")  // delete all data in initFrameTable
 
         var initFileNames: Array<String> = Array<String>()
 

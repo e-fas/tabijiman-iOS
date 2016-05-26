@@ -431,7 +431,7 @@ final class SQLite: NSObject {
         }
     }
 
-    func truncateDb( category: String ) {
+    func truncateTable( category: String ) {
         
         switch category {
             
