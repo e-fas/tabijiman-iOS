@@ -31,9 +31,11 @@ final class AppSetting {
 
     static let shareTag = "#tabijiman"  // シェア時に追加するハッシュタグ
     
-    /// debug用フラグ
-    /// false - ファイルの書き込みディレクトリが Library  に
-    /// true  - ファイルの書き込みディレクトリが Document に
+    // debug用フラグ
+    // false - ファイルの書き込みディレクトリ: Library
+    // true  - ファイルの書き込みディレクトリ: Document
+    // ※iTunesファイル共有でDocumentにアクセスしたい場合: info.plist で UIFileSharingEnabled を YESに
+    // ※アプリ申請時には NO にしないと理由を聞かれる
     static let debug: Bool = false
     static let documentPath =
     debug ? NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
