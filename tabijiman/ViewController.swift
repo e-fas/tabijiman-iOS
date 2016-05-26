@@ -209,28 +209,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
+        // async 準備
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let group = dispatch_group_create()
+
         switch keyPath! {
             case "place_dic_data":
                 print("place in keyPath")
                 
-                SQLite.sharedInstance.truncateTable("place")  // delete all data in PlaceTable
-                
-                
-                // use bulk insert
-                _ = SQLite.sharedInstance.bulkInsertData("place", datass: self.place_dic_data)
+                dispatch_group_async(group, queue, { () -> Void in
+                    SQLite.sharedInstance.truncateTable("place")  // delete all data in PlaceTable
+                    
+                    // use bulk insert
+                    _ = SQLite.sharedInstance.bulkInsertData("place", datass: self.place_dic_data)
+                })
 
                 self.data2AnnotationsOnMap(self.place_dic_data, category: "place")
             
             case "frame_dic_data":
                 print("frame in keyPath")
 
-                SQLite.sharedInstance.truncateTable("frame")  // delete all data in frameTable
-                
-                for data in self.frame_dic_data {
-                    _ = SQLite.sharedInstance.insertData("frame", datas: data)
-                }
-                self.data2AnnotationsOnMap(self.frame_dic_data, category: "frame")
-            
+                dispatch_group_async(group, queue, { () -> Void in
+                    SQLite.sharedInstance.truncateTable("frame")  // delete all data in frameTable
+                    
+                    for data in self.frame_dic_data {
+                        _ = SQLite.sharedInstance.insertData("frame", datas: data)
+                    }
+                    self.data2AnnotationsOnMap(self.frame_dic_data, category: "frame")
+                })
+
             default: break
         }
         print("KeyPath >> \(keyPath), object >> \(object) in observeValueForKeyPath")
@@ -425,8 +432,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
                     "area": dic[langText]![i]["area"] as! Double,
                     "flag": true
                 ]
-                print(" dic[\(langText)][title] : \(dic[langText]![i]!["title"]!! as! String)")
-//                print(" dic[ja][title] : \(dic["ja"]![i]!["title"]!! as! String)")
+                #if DEBUG
+                    print(" dic[\(langText)][title] : \(dic[langText]![i]!["title"]!! as! String)")
+                #endif
                 
                 dic_data.append(dics)
             }
