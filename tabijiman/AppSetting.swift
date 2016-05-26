@@ -102,7 +102,7 @@ final class AppSetting {
     static let SPARQL_get_param = "?output=json&query="
     static let minDescriptionString = 10  // 最低文字数を設定
     
-    // 観光情報を取得　（言語タグなし、住所をOption[任意]として指定）
+    // 観光情報を取得　（言語タグなし、住所をOption[任意]として指定。';' 記法で主語省略）
     static let SPARQL_query_place =
     "select ?s ?name ?cat ?lat ?lng ?add ?name ?desc ?img {"
         + "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/jrrk#CivicPOI>;"
@@ -115,6 +115,8 @@ final class AppSetting {
         + "OPTIONAL {"
         +     "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/jrrk#CivicPOI>;"
         +     "<http://purl.org/jrrk#address> ?add; }"
+        + "FILTER ( lang(?name) = \"" + String(langSparql) + "\" )"
+        + "FILTER ( lang(?desc) = \"" + String(langSparql) + "\" )"
         + "}"
 
     // 観光情報を取得　（言語タグなし、住所なし、画像情報をOption[任意]として指定）
@@ -131,7 +133,7 @@ final class AppSetting {
         +     "<http://schema.org/image> ?img; }"
         + "}"
     
-    // カオハメフレームを取得　（言語タグ でフィルタあり、Prefix表記）
+    // カオハメフレームを取得　（言語タグ でフィルタあり、Prefix表記。 '.' 記法で主語必須）
     static let SPARQL_prefix =
     "prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#>"
         + "prefix odp:   <http://odp.jig.jp/odp/1.0#>"
