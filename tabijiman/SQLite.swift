@@ -231,6 +231,61 @@ final class SQLite: NSObject {
         
         return [[:]]
     }
+
+    
+    func bulkInsertData( category: String, datass: Array<Dictionary<String, AnyObject>> ) -> Int64 {
+        
+        switch category {
+            
+        case "place":
+            
+            var rowid: Int64 = 0
+            try! self.place_db.transaction {
+
+                for datas in datass {
+
+                let name = datas["name"]! as! String
+                let desc = datas["desc"]! as! String
+                let lat  = datas["lat"]! as! Double
+                let lng  = datas["lng"]! as! Double
+                
+                // SELECT "placeName" FROM "placeTable" where "placeLat == lat && placeLng == lng"
+                let query = self.placeTable.select(self.placeName).filter(self.placeLat == lat && self.placeLng == lng)
+                if let _ = self.place_db.pluck(query) {
+                    #if DEBUG
+                        print("pass")
+                    #endif
+                    // TODO : SPARQLのレスポンスで重複トリプルがある場合の処理
+                    // 重複の定義) 完全に位置情報が同じだった場合
+                }
+                else {
+                    let query = self.placeTable.insert(
+                        self.placeName <- name,
+                        self.placeDesc <- desc,
+                        self.placeLat <- lat,
+                        self.placeLng <- lng,
+                        self.placeImg <- String(datas["img"]!),
+                        self.placeAddress <- String(datas["address"]!)
+                    )
+                    
+                    rowid = try self.place_db.run(query)
+                    #if DEBUG
+                        print("place >> inserted id: \(rowid) with num. of desc: \(desc.characters.count)")
+                    #endif
+                }
+                    
+                }
+                
+            }
+            return rowid
+        
+        case "frame": break
+            
+        default: break
+
+        }
+        return 0
+    }
     
     
     func insertData( category: String, datas: Dictionary<String, AnyObject> ) -> Int64 {
@@ -244,15 +299,14 @@ final class SQLite: NSObject {
             let lat  = datas["lat"]! as! Double
             let lng  = datas["lng"]! as! Double
 
-            // SELECT "placeDesc" FROM "placeTable" where "placeLat == lat && placeLng == lng"
+            // SELECT "placeName" FROM "placeTable" where "placeLat == lat && placeLng == lng"
             let query = placeTable.select(placeName).filter(placeLat == lat && placeLng == lng)
             if let _ = place_db.pluck(query) {
                 break
                 // TODO : SPARQLのレスポンスで重複トリプルがある場合の処理
-                // 例) 名前が一緒ならば、Description が長いレコードを優先して処理する必要など
+                // 重複の定義) 完全に位置情報が同じだった場合
             }
-            // Description が 一定文字を超えている場合は Insert
-            else if desc.characters.count > AppSetting.minDescriptionString {
+            else {
                 let insert = placeTable.insert(
                     placeName <- name,
                     placeDesc <- desc,

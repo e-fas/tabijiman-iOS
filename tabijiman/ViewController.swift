@@ -215,10 +215,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
                 
                 SQLite.sharedInstance.truncateTable("place")  // delete all data in PlaceTable
                 
-                for data in self.place_dic_data {
-                    _ = SQLite.sharedInstance.insertData("place", datas: data)
-                }
                 
+                // use bulk insert
+                _ = SQLite.sharedInstance.bulkInsertData("place", datass: self.place_dic_data)
+
                 self.data2AnnotationsOnMap(self.place_dic_data, category: "place")
             
             case "frame_dic_data":

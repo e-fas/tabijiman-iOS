@@ -117,6 +117,7 @@ final class AppSetting {
         +     "<http://purl.org/jrrk#address> ?add; }"
         + "FILTER ( lang(?name) = \"" + String(langSparql) + "\" )"
         + "FILTER ( lang(?desc) = \"" + String(langSparql) + "\" )"
+        + "FILTER ( STRLEN(?desc) > " + String(minDescriptionString) + " )"
         + "}"
 
     // 観光情報を取得　（言語タグなし、住所なし、画像情報をOption[任意]として指定）
