@@ -90,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		075F023F6396933AE944AA5D /* Pods_tabijiman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabijiman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2481FB1ED1EE26CE2DFE8679 /* Pods_tabijimanOSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabijimanOSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56037C36C3C5AB0354A83F58 /* Pods-tabijiman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabijiman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tabijiman/Pods-tabijiman.debug.xcconfig"; sourceTree = "<group>"; };
 		5A1AD4E61C4E75FE001F7094 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		5A1AD4F01C4F34FA001F7094 /* Credit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
@@ -100,7 +101,7 @@
 		5A63E3081C76FB8900DF86BE /* tabijiman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tabijiman-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A6FA41A1C4651CD00824035 /* SPARQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPARQL.swift; sourceTree = "<group>"; };
 		5A78CCBD1C6B0F6D009BA141 /* InitFrameData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InitFrameData.plist; sourceTree = "<group>"; };
-		5A8B24E11C30D589002EAF12 /* tabijiman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tabijiman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8B24E11C30D589002EAF12 /* tabijimanOSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tabijimanOSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8B24E41C30D589002EAF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A8B24E61C30D58A002EAF12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		5A8B24E91C30D58A002EAF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,7 +213,7 @@
 		5A8B24E21C30D589002EAF12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A8B24E11C30D589002EAF12 /* tabijiman.app */,
+				5A8B24E11C30D589002EAF12 /* tabijimanOSS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +389,7 @@
 				5AAB6C811C47B4FC00DD9F70 /* MapKit.framework */,
 				5A3A3F501C3A75F800F82CAD /* Social.framework */,
 				075F023F6396933AE944AA5D /* Pods_tabijiman.framework */,
+				2481FB1ED1EE26CE2DFE8679 /* Pods_tabijimanOSS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -395,10 +397,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A8B24E01C30D589002EAF12 /* tabijimanOSS */ = {
+		5A8B24E01C30D589002EAF12 /* tabijiman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A8B24F61C30D58A002EAF12 /* Build configuration list for PBXNativeTarget "tabijimanOSS" */;
+			buildConfigurationList = 5A8B24F61C30D58A002EAF12 /* Build configuration list for PBXNativeTarget "tabijiman" */;
 			buildPhases = (
+				93E801D0341D3FAEA4B929FC /* Check Pods Manifest.lock */,
 				F409FFB85B5B4C9E295981F9 /* 📦 Check Pods Manifest.lock */,
 				5A8B24DD1C30D589002EAF12 /* Sources */,
 				5A8B24DE1C30D589002EAF12 /* Frameworks */,
@@ -407,14 +410,15 @@
 				3A8BF48B69CF7C121CA97A00 /* 📦 Embed Pods Frameworks */,
 				38EE76AC6925B3353F983B98 /* 📦 Copy Pods Resources */,
 				99CDDBAACCB0D155BFCB3C02 /* Embed Pods Frameworks */,
+				8169E94FC7DFB01A02671296 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = tabijimanOSS;
+			name = tabijiman;
 			productName = tabijiman;
-			productReference = 5A8B24E11C30D589002EAF12 /* tabijiman.app */;
+			productReference = 5A8B24E11C30D589002EAF12 /* tabijimanOSS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -452,7 +456,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A8B24E01C30D589002EAF12 /* tabijimanOSS */,
+				5A8B24E01C30D589002EAF12 /* tabijiman */,
 			);
 		};
 /* End PBXProject section */
@@ -571,6 +575,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "env > env.txt";
+		};
+		8169E94FC7DFB01A02671296 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tabijiman/Pods-tabijiman-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E801D0341D3FAEA4B929FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		99CDDBAACCB0D155BFCB3C02 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -770,7 +804,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.e-fas.oss.tabijiman";
-				PRODUCT_NAME = tabijiman;
+				PRODUCT_NAME = tabijimanOSS;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabijiman/tabijiman-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
@@ -792,7 +826,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.e-fas.oss.tabijiman";
-				PRODUCT_NAME = tabijiman;
+				PRODUCT_NAME = tabijimanOSS;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "tabijiman/tabijiman-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
@@ -811,7 +845,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A8B24F61C30D58A002EAF12 /* Build configuration list for PBXNativeTarget "tabijimanOSS" */ = {
+		5A8B24F61C30D58A002EAF12 /* Build configuration list for PBXNativeTarget "tabijiman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A8B24F71C30D58A002EAF12 /* Debug */,

@@ -87,12 +87,15 @@ swift で作った xcode のプロジェクトです。
 
 ### パッケージ名を変更する
 
-プロジェクト名 : tabijiman , ターゲット名 : tabijimanOSS （日本語表記 : 旅自慢OSS） のターゲット名を変更すると、インストールした時のアプリ名が変更できます。
+パッケージ名： tabijimanOSS （日本語表記 : 旅自慢OSS） は、次の箇所を編集することで変更できます。
+
+※プロジェクト名 : tabijiman , ターゲット名 : tabijiman。ターゲット名は、Podsとの関連付けに利用されているので変更しないでください。
 
 1. xcode で ワークスペースを開く
 2. 左ペインのプロジェクトナビゲーター上部の tabijiman をクリック
-3. 中央ペインに TARGETS の項目がでる。ここを変更するとターゲット名が変更されます
-4. 日本語表記は、多言語対応ファイル tabijiman/InfoPlist.strings の中の修正します
+3. 中央ペインに TARGETS の項目の tabijiman をクリック。
+4. [Build Settings] の中から [Packaging] > [Product Name] を探す。この項目の値 tabijimanOSS を任意の文字列に変更します。
+5. 日本語表記は、多言語対応ファイル tabijiman/InfoPlist.strings の中の次の箇所を変更します
 
 ```
 // アプリ名の変更
